@@ -1,0 +1,30 @@
+script(type="text/template" id="templateSliderCompositeView")
+	div.col-lg-12.well#sliderLists
+		table.table.table-hover.table-condensed
+			thead
+				tr
+					th.hoho(data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover") display
+					th.hoho(data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover") number
+					th.hoho(data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover") name
+					th.hoho(data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover") description
+					th url link
+					th photo
+					th
+			tbody
+		button.btn.btn-default.btn-xs.pull-right.addSliderBtn(data-toggle="modal" data-target=".bs-example-modal-lg") +add new
+
+script(type="text/template" id="templateSliderItemView")
+	td.switcher
+		<%= displayStatus() %>
+	td <%= number %>
+		div.numberEdit.pull-right
+			span.up(data-step="1") &#9650
+			span.down(data-step="-1") &#9660
+	td <%= name %>
+	td <%= description %>
+	td <%= url %>
+	td 
+		a.sliderPhoto(data-toggle="modal" data-target=".bs-example-modal-lg") photo
+	td 
+		button.btn.btn-default.btn-xs.pull-right.editSliderBtn(data-toggle="modal" data-target=".bs-example-modal-lg") edit
+		button.btn.btn-default.btn-xs.pull-right.deleteSliderBtn delete
